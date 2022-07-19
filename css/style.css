@@ -2181,7 +2181,7 @@ margin-bottom: 23px;
     color: #FFFFFF;
     text-decoration: none;
     margin-top: po;
-    background-color: #0000008c;
+    /* background-color: #0000008c; */
 }
 
 .thank-logo {
@@ -4050,7 +4050,7 @@ form #msg {
 li{
     list-style: none;
     font-size: 18px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 li:before {
     content:"·";
