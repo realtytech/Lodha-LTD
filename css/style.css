@@ -621,7 +621,7 @@ nav a:hover {
 
 .grey {
     /* color: #4d4e50; */
-    background-image: url('/images/Background.jpg') !important;
+    background-image: url('/images/Background.webp') !important;
 }
 
 .amenities {
@@ -2079,7 +2079,7 @@ margin-bottom: 23px;
 }
 
 #configuration {
-    background: url("../images/Lodha\ Banner.jpg") center;
+    background: url("../images/Lodha\ Banner.webp") center;
     background-size: contain;
     background-attachment: fixed;
 }
@@ -2563,7 +2563,7 @@ a.thumbnail:hover {
 }
 
 .modal-body {
-    background: url('../images/Background.jpg')
+    background: url('../images/Background.webp')
 }
 
 .selldof .form-control {
@@ -3512,7 +3512,7 @@ margin: 0 auto; */
 #crown {
     background-size: cover;
     padding: 4px 0px;
-    /* background: url(../images/patern.png) #272727; */
+    /* background: url(../images/patern.webp) #272727; */
     /* background-repeat: no-repeat; */
     /* background: linear-gradient(-45deg, #f89834, #e91e63, #f25536, #7c7c7c); */
     /* background-size: 400% 400%; */
@@ -3540,7 +3540,7 @@ margin: 0 auto; */
     /* border-radius: 10px; */
     width: 139px;
     margin: 3px auto 25px;
-    background-image: url(../images/div.png);
+    background-image: url(../images/div.webp);
     background-size: cover;
 }
 

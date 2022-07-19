@@ -142,17 +142,16 @@ function save_landing_pageinfo(elm) {
         "name": name,
         "mobile": mobileno,
         "email": emailid,
-        "url": currentUrl.substring(0,255),
-        "did": srd,
-        "UTMSource":utm_source,
-        "UTMmedium":utm_medium,
-        "projectName": project
+        "source": "Website",
+        "comment":"URL:"+currentUrl.substring(0,255)+"UTM Source:"+utm_source+"UTM Medium:"+utm_medium,
+        "sub_source":utm_medium,
+        "project": project
 
     }
     // console.log("Adding Data to SFDC");
-
-    storeLeadInSFDC(data,fsource);
+    storeLeadInEnrichr(data,fsource);
     return;
+    storeLeadInSFDC(data,fsource);
 
 
 }
@@ -164,6 +163,29 @@ function queryParameter(name, url) {
     var regex = new RegExp(regexS);
     var results = regex.exec(url);
     return results == null ? null : results[1];
+}
+
+function storeLeadInEnrichr(data,formName) {
+    console.log("Adding Data to SFDC");
+    console.log(data)
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://pinkode.glitz.apps.enrichr.co/public/companies/41b21e3e-600b-4d9f-aab1-bfb72c5b915e/leads-all",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",          
+        },
+        "processData": false,
+        "data": JSON.stringify(data)
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response),formName);
+        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 2000)
+      }); 
+
 }
 
 function storeLeadInSFDC(data,formName) {
