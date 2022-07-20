@@ -86,6 +86,7 @@ function save_landing_pageinfo(elm) {
     // var conf = jQuery('#' + elm + ' select[name="conf"]').val();
     var message = jQuery('#' + elm + ' textarea[name="message"]').val();
     var fsource = jQuery('#' + elm + ' input[name="source"]').val();
+    var floc = jQuery('#' + elm + ' input[name="flocation"]').val();
     var currentUrl = location.hostname;
     // var utm_channel = Get_Cookie('utm_channel');
 
@@ -143,7 +144,7 @@ function save_landing_pageinfo(elm) {
         "mobile": mobileno,
         "email": emailid,
         "source": "Website",
-        "comment":"URL:"+currentUrl.substring(0,255)+"UTM Source:"+utm_source+"UTM Medium:"+utm_medium,
+        "comment":"URL:"+currentUrl.substring(0,255)+" UTM Source:"+utm_source+" UTM Medium:"+utm_medium+" Loc:"+floc,
         "sub_source":utm_medium,
         "project": project
 
