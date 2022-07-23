@@ -87,7 +87,7 @@ function save_landing_pageinfo(elm) {
     var message = jQuery('#' + elm + ' textarea[name="message"]').val();
     var fsource = jQuery('#' + elm + ' input[name="source"]').val();
     var floc = jQuery('#' + elm + ' input[name="flocation"]').val();
-    var currentUrl = location.hostname;
+    var currentUrl = window.location.href;
     // var utm_channel = Get_Cookie('utm_channel');
 
 
@@ -139,11 +139,18 @@ function save_landing_pageinfo(elm) {
     var project = 'Lodha Vikhroli';
     var utm_source = queryParameter('utm_source',currentUrl);
     var utm_medium = queryParameter('utm_medium',currentUrl);
+    var sourceMapping = { 'google_search' : "Google Search",
+    'google_display': "Google Display",
+    "Discovery": "Google Discovery",
+    "":"Website"
+}
+
+    var source  = (utm_source) ? sourceMapping[utm_source] : "Website";
     var data = {
         "name": name,
         "mobile": mobileno,
         "email": emailid,
-        "source": "Website",
+        "source": source,
         "comment":"URL:"+currentUrl.substring(0,255)+" UTM Source:"+utm_source+" UTM Medium:"+utm_medium+" Loc:"+floc,
         "sub_source":utm_medium,
         "project": project
